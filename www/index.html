@@ -10,18 +10,18 @@
         <script type="text/javascript">
         $(document).ready(function(){
         	document.addEventListener('deviceready',function(){
-                        window.plugin.notification.add({message:'content'});
+                        window.plugin.notification.local.add({message:'content'});
         		$("#adder").tap(function(){
         			var content=$("#alertext").val();
-        			//var now=new Date().getTime();
-        			//var alertTime=new Date(now+60*1000);
-        			/*window.plugin.notification.local.add({
+        			var now=new Date().getTime();
+        			var alertTime=new Date(now+60*1000);
+        			window.plugin.notification.local.add({
         				id:1,
         				title:"Simple Notification",
         				message:content,
         				repeat:weekly,
         				date:now
-        			}); */
+        			}); 
                         //window.plugin.notification.add({message:content});
         		});
         	},false);
