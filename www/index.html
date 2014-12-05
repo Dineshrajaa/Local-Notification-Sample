@@ -13,13 +13,13 @@
         		$("#adder").tap(function(){
         			var content=$("#alertext").val();
         			var now=new Date().getTime();
-        			var alertTime=new Date(now+60*1000);
+        			//var alertTime=new Date(now+60*1000);
         			window.plugin.notification.local.add({
         				id:1,
         				title:"Simple Notification",
         				message:content,
         				repeat:weekly,
-        				date:alertTime
+        				date:now
         			});
         		});
         	},false);
