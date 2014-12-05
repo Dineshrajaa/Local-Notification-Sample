@@ -12,15 +12,16 @@
         	document.addEventListener('deviceready',function(){
         		$("#adder").tap(function(){
         			var content=$("#alertext").val();
-        			var now=new Date().getTime();
+        			//var now=new Date().getTime();
         			//var alertTime=new Date(now+60*1000);
-        			window.plugin.notification.local.add({
+        			/*window.plugin.notification.local.add({
         				id:1,
         				title:"Simple Notification",
         				message:content,
         				repeat:weekly,
         				date:now
-        			});
+        			}); */
+                        window.plugin.notification.add({message:content});
         		});
         	},false);
         });
