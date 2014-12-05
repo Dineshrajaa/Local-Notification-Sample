@@ -10,7 +10,7 @@
         <script type="text/javascript">
         $(document).ready(function(){
         	document.addEventListener('deviceready',function(){
-                        window.plugin.notification.add({message:content});
+                        window.plugin.notification.add({message:'content'});
         		$("#adder").tap(function(){
         			var content=$("#alertext").val();
         			//var now=new Date().getTime();
@@ -22,7 +22,7 @@
         				repeat:weekly,
         				date:now
         			}); */
-                        window.plugin.notification.add({message:content});
+                        //window.plugin.notification.add({message:content});
         		});
         	},false);
         });
