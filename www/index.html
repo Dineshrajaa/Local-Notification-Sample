@@ -16,16 +16,34 @@
 
                         $("#adder").tap(function(){
                                 var timer=$("#alertime").val();
-                                var timer1=new Date(timer);
-                                alert("Added "+ timer);
+                                var n_format_time = timeToNowGMT(timer);
+			        var now = new Date();
+			        var day = ("0" + now.getDate()).slice(-2);
+			        var month = ("0" + (now.getMonth() + 1)).slice(-2)
+			        var dateSplit = now.getFullYear()+'-'+month+'-'+day+'T'+n_format_time;
+			        var newDate = new Date(dateSplit);
+                                alert("Added "+ newDate);
                                 window.plugin.notification.local.add({
                                         id:1,
                                         title:"Added Remainder",
                                         message:"This is an Test",
-                                        date:timer1
+                                        date:newDate
                                 });
                         });
                 },false);
+                
+                function timeToNowGMT(value){
+		        var time = value;
+		        var hours = Number(time.match(/^(\d+)/)[1]);
+		        var minutes = Number(time.match(/:(\d+)/)[1]);
+		        if(hours>=24) hours = hours-24;
+		        var sHours = hours.toString();
+		        var sMinutes = minutes.toString();
+		        if(hours<10) sHours = "0" + sHours;
+		        if(minutes<10) sMinutes = "0" + sMinutes;
+		        return(sHours + ":" + sMinutes + ":00");
+		    }
+                
         });
         
         
